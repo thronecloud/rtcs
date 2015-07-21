@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load bootstrap3 %}
+{% block extra_media %}
+{{ form.media }}
+<link href="{% static 'css/bootstrap-datetimepicker.min.css' %}" rel="stylesheet">
+<script src="{% static 'js/bootstrap-datetimepicker.min.js' %}"></script>
+<style>
+.geoposition-search{
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+</style>
+{% endblock %}
+{% block content %}
+<form action="" method="post">{% csrf_token %}
+
+    {% bootstrap_field form.moment %}
+
+    {% bootstrap_field form.gender %}
+
+    <div class="form-group col-md-6">
+        <label class="control-label" for="id_origin_0">Origin</label>
+        <div class="geoposition-widget" data-map-widget-height="240"
+            data-map-options="{}" data-marker-options="{}">
+            <input class="form-control geoposition"
+                id="id_origin_0" name="origin_0" required="required"
+                title="" type="hidden" />
+            <input class="form-control geoposition" id="id_origin_1"
+                name="origin_1" required="required" title="" type="hidden" />
+        </div>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label class="control-label" for="id_destination_0">Destination</label>
+        <div class="geoposition-widget" data-map-widget-height="240"
+            data-map-options="{}" data-marker-options="{}">
+            <input class="form-control geoposition"
+                id="id_destination_0" name="destination_0" required="required"
+                title="" type="hidden" />
+            <input class="form-control geoposition" id="id_destination_1"
+                name="destination_1" required="required" title="" type="hidden" />
+        </div>
+    </div>
+
+    <div class="form-group clearfix">
+        <button type="submit" class="btn btn-primary">
+            Submit
+        </button>
+    </div>
+</form>
+<script type="text/javascript">
+    $("#id_moment").datetimepicker({
+        format: 'yyyy-mm-dd hh:ii',
+        autoclose: true
+    });
+</script>
+{% endblock %}

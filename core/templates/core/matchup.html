@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Matches</h1>
+<table class="table">
+    <tr>
+        <th>User</th>
+        <th>Best Match</th>
+        <th>Score</th>
+    </tr>
+    {% for p0, p1, score in pairs %}
+    <tr>
+        <td>{{ p0 }}</td>
+        <td>{{ p1 }}</td>
+        <td>{{ score }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

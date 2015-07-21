@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        <h3 class="panel-title pull-left" style="padding-top: 7.5px;">My Requests</h3>
+        <div class="btn-group pull-right">
+            <a
+            class="btn btn-default btn-success"
+            href="{% url 'cabrequest_new' %}">Create a Cab Request</a>
+        </div>
+    </div>
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>When</th>
+                    <th>With (Gender)</th>
+                    <th>From</th>
+                    <th>To</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for req in user.profile.cabrequests.all %}
+                <tr>
+                    <td><a href="{% url 'cabrequest_view' pk=req.pk %}">{{ req.moment }}</a></td>
+                    <td>{{ req.get_gender_display }}</td>
+                    <td>{{ req.origin_name }}</td>
+                    <td>{{ req.destination_name }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--
+<h2>Data Fetched for User {{ user }}</h2>
+<h4>Hometown</h4>
+<p><bolder>ID:</bolder>{{ user.userhometown.hometown_id}}</p>
+<p><bolder>Name:</bolder>{{ user.userhometown.hometown_name}}</p>
+
+<h4>Education</h4>
+<table class="table">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>type</th>
+    </tr>
+    {% for edu in user.usereducation_set.all %}
+    <tr>
+        <th>{{ edu.school_id }}</th>
+        <th>{{ edu.school_name }}</th>
+        <th>{{ edu.edu_type }}</th>
+    </tr>
+    {% endfor %}
+</table>
+
+<h4>Friends</h4>
+<table class="table">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+    </tr>
+    {% for friend in user.userfriend_set.all %}
+    <tr>
+        <th>{{ friend.friend_id }}</th>
+        <th>{{ friend.friend_name }}</th>
+    </tr>
+    {% endfor %}
+</table>
+
+-->
+{% endblock %}

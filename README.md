@@ -1,2 +1,5 @@
 # rtcs
-A real time cab sharing system
+
+ A Python based dynamic cab sharing system. The code was written before Uber launched Uber Pool or Ola launched Olashare.
+ 
+ 

@@ -12,7 +12,7 @@ functools32==3.2.3.post1
 geopy==1.10.0
 googlemaps==2.2
 httplib2==0.9.1
-ipython==3.1.0
+ipython==7.16.3
 Jinja2==2.7.3
 jsonschema==2.5.1
 Markdown==2.6.2

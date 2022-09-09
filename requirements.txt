@@ -17,7 +17,7 @@ Jinja2==2.7.3
 jsonschema==2.5.1
 Markdown==2.6.2
 MarkupSafe==0.23
-mistune==0.6
+mistune==0.8.1
 oauth2==1.5.211
 oauthlib==0.7.2
 psycopg2==2.6.1

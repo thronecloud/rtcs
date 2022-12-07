@@ -1,5 +1,5 @@
 backports.ssl-match-hostname==3.4.0.2
-certifi==2015.4.28
+certifi==2022.12.7
 Django==1.8.2
 django-allauth==0.20.0
 django-appconf==1.0.1
